@@ -1,14 +1,10 @@
 console.log('hi')
 
+
+
 class Project {
     constructor(name) {
         this.name = name;
-        this.tasks = new TaskStorage();
-    }
-}
-
-class TaskStorage {
-    constructor() {
         this.tasks = [];
     }
 
@@ -22,9 +18,6 @@ class TaskStorage {
 
     printTasks = () => printTasks(this.tasks);
 }
-
-
-
 
 function printTasks(taskStore) {
     taskStore.forEach(element => {
@@ -48,11 +41,15 @@ class TaskItem {
     }
 
     getItem = () => {
-        return this.title;
+        return this.item;
     }
 
     updateItem = (newTitle) => {
-        this.title = newTitle;
+        this.item = newTitle;
+    }
+
+    capataliseItem = () => {
+        this.item = this.item.toUpperCase();
     }
 }
 
@@ -60,10 +57,17 @@ class TaskItem {
 
 
 
-const storage1 = new Project('Project1');
+const Project1 = new Project('Project1');
 
-storage1.tasks.addTask('Tasks title', 'A task desc', 'priority')
-storage1.tasks.addTask('Tasks title2', 'A task desc2', 'priority2')
+Project1.addTask('Tasks title', 'A task desc', 'priority')
+Project1.addTask('Tasks title2', 'A task desc2', 'priority2')
+
+
+Project1.printTasks();
+console.log(Project1.tasks[1].title.getItem());
+Project1.tasks[1].title.capataliseItem();
+console.log(Project1.tasks[1].title.getItem());
+
 
 //storage1.printTasks();
 
