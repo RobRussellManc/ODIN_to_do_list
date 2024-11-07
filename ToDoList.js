@@ -21,7 +21,7 @@ ProjectActions.listProjects();
 
 DOMUpdate.listProjects(ProjectActions.getProjects())
 
-DOMUpdate.displayTasks(ProjectActions.getProjectX(0))
+DOMUpdate.updateTaskTable(ProjectActions.getProjectX(0))
 
 
 //console.log(ProjectActions.getProjectX(0))

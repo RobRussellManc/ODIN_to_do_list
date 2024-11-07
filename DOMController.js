@@ -1,3 +1,5 @@
+import { TaskTable } from "./TaskTable.js"
+
 export const DOMUpdate = (function() {
 
     // DOM Selectors
@@ -13,7 +15,7 @@ export const DOMUpdate = (function() {
         projectList.forEach(element => {
             let liNode = document.createElement('li');
             liNode.textContent = element.name;
-            liNode.addEventListener("click", () => displayTasks(element))
+            liNode.addEventListener("click", () => updateTaskTable(element))
             ulNode.appendChild(liNode);            
         });
 
@@ -34,8 +36,15 @@ export const DOMUpdate = (function() {
         TasksDOM.appendChild(ulNode);
     }
 
+    const updateTaskTable = (project) => {
+        let table= TaskTable(project)
+        TasksDOM.innerHTML = '';
+        TasksDOM.appendChild(table);
 
-    return {listProjects, displayTasks}
+
+    }
+
+    return {listProjects, displayTasks, updateTaskTable}
 
 })();
 
