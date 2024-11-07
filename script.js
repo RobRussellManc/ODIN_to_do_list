@@ -17,7 +17,7 @@ function Project (name_) {
     return {projectName, tasks, AddTask, deleteTask, printTasks}
 }
 
-
+*/
 
 
 function Project(title) {
@@ -48,6 +48,9 @@ const ProjectActions = (function () {
 })();
 
 
+function createProject(projectName) {
+    ProjectActions.addProject(projectName);
+}
 
 
 

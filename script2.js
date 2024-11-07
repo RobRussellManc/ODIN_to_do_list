@@ -1,5 +1,5 @@
 // Project object
-const ProjectObject = (name_) => {
+function ProjectObject (name_) {
     const name = name_;
     const date = '04/12/2024'
     const tasks = [];
@@ -20,11 +20,12 @@ const Projects = (function () {
 
     const deleteProject = (projectNumber) => {
         projects.splice(projectNumber, 1)
+        console.log(`Deleted project ${projects[projectNumber].name}`)
     }
 
     const listProjects = () => {
         projects.forEach(element => {
-            console.log(element.projectName)
+            console.log(`${element.name}, created on ${element.date}`)
             
         });
     }
@@ -80,6 +81,7 @@ function TaskObject(item_) {
 
 CreateProject('MyProject')
 CreateProject('2nd Project')
+CreateProject('3rd Project')
 
 console.log(Projects.projects[0].tasks)
 
@@ -91,6 +93,13 @@ Projects.projects[0].addTask(['Tasks title3', 'A task desc3', 'priority3'])
 console.log(Projects.projects[0].tasks[0].PrintTask())
 Projects.projects[0].tasks[0].ToggleComplete()
 console.log(Projects.projects[0].tasks[0].PrintTask())
+
+
+Projects.listProjects();
+
+Projects.deleteProject[1];
+
+Projects.listProjects();
 
 //console.log(Projects.projects[0].tasks[0].title.getItem())
 //console.log(Projects.projects[0].tasks[1].title.getItem())
