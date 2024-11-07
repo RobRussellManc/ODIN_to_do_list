@@ -1,11 +1,31 @@
 import { CreateProject, ProjectActions} from "./projects.js"
 
+import { DOMUpdate } from "./DOMController.js"
+
+
 CreateProject('MyProject')
 CreateProject('2nd Project')
 CreateProject('3rd Project')
 
+
+ProjectActions.getProjectX(0).addTask(['Tasks title1', 'A task desc1', 'priority1'])
+ProjectActions.getProjectX(0).addTask(['Tasks title2', 'A task desc2', 'priority2'])
+ProjectActions.getProjectX(0).addTask(['Tasks title3', 'A task desc3', 'priority3'])
+
+
+ProjectActions.getProjectX(2).addTask(['Tasks title1', 'A task desc1', 'priority1'])
+
+
+
 ProjectActions.listProjects();
 
+DOMUpdate.listProjects(ProjectActions.getProjects())
+
+DOMUpdate.displayTasks(ProjectActions.getProjectX(0))
+
+
+//console.log(ProjectActions.getProjectX(0))
+/*
 
 ProjectActions.getProjectX(0).addTask(['Tasks title1', 'A task desc1', 'priority1'])
 ProjectActions.getProjectX(0).addTask(['Tasks title2', 'A task desc2', 'priority2'])
@@ -23,7 +43,6 @@ ProjectActions.getProjectX(0).listProjectTasks();
 
 
 
-/*
 
 
 CreateProject('MyProject')

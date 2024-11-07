@@ -1,0 +1,13 @@
+container {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    height: 400px;
+}
+
+projects {
+    background-color: aqua;
+}
+
+tasks {
+    background-color: bisque;
+}

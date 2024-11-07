@@ -13,7 +13,7 @@ function Task(task_info) {
         return `${title.getItem()}, ${description.getItem()}, ${priority.getItem()}, ${completed}`;
     }
      
-    return {PrintTask, ToggleComplete}
+    return {title, PrintTask, ToggleComplete}
 }
 
 // Individual task item objects

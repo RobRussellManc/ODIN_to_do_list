@@ -42,6 +42,10 @@ const ProjectActions= (function () {
         return ProjectStore.projects[x];
     }
 
+    const getProjects = () => {
+        return ProjectStore.projects;
+    }
+
     const addProject = (projectName) => { 
         ProjectStore.projects.push(ProjectObject(projectName))
     }
@@ -57,7 +61,7 @@ const ProjectActions= (function () {
         });
     }
 
-    return {getProjectX, addProject, deleteProject, listProjects}
+    return {getProjectX, getProjects, addProject, deleteProject, listProjects}
 })();
 
 export {ProjectStore, CreateProject, ProjectActions}
