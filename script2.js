@@ -7,37 +7,48 @@ function ProjectObject (name_) {
     const addTask = (task_info) => {
         tasks.push(Task(task_info))
     }
-    return {name, date, tasks, addTask}
+
+    const listProjectTasks = () => {
+        tasks.forEach(element => {
+                console.log(element.PrintTask());
+        });
+    }
+
+    return {name, date, tasks, addTask, listProjectTasks}
 }
 
 // Storing projects
-const Projects = (function () {
+const ProjectStore =  (function() {
     const projects = [];
+    return {projects}
+})();
+
+// Create projects
+function CreateProject(projectName) {
+    ProjectActions.addProject(projectName);
+}
+
+// Project actions
+const ProjectActions= (function () {
 
     const addProject = (projectName) => { 
-        projects.push(ProjectObject(projectName))
+        ProjectStore.projects.push(ProjectObject(projectName))
     }
 
     const deleteProject = (projectNumber) => {
-        projects.splice(projectNumber, 1)
+        ProjectStore.projects.splice(projectNumber, 1)
         console.log(`Deleted project ${projects[projectNumber].name}`)
     }
 
     const listProjects = () => {
-        projects.forEach(element => {
+        ProjectStore.projects.forEach(element => {
             console.log(`${element.name}, created on ${element.date}`)
-            
         });
     }
 
-
-    return {projects, addProject, deleteProject, listProjects}
+    return {addProject, deleteProject, listProjects}
 })();
 
-
-function CreateProject(projectName) {
-    Projects.addProject(projectName);
-}
 
 // Task objects
 function Task(task_info) {
@@ -77,11 +88,30 @@ function TaskObject(item_) {
 }
 
 
-
-
 CreateProject('MyProject')
 CreateProject('2nd Project')
 CreateProject('3rd Project')
+
+
+
+ProjectActions.listProjects();
+
+ProjectStore.projects[0].addTask(['Tasks title1', 'A task desc1', 'priority1'])
+ProjectStore.projects[0].addTask(['Tasks title2', 'A task desc2', 'priority2'])
+ProjectStore.projects[0].addTask(['Tasks title3', 'A task desc3', 'priority3'])
+console.log(ProjectStore.projects[0].tasks[0].PrintTask())
+
+
+
+ProjectStore.projects[0].listProjectTasks();
+ProjectStore.projects[0].tasks[0].ToggleComplete()
+ProjectStore.projects[0].listProjectTasks();
+
+
+/*
+
+
+
 
 console.log(Projects.projects[0].tasks)
 
@@ -95,7 +125,7 @@ Projects.projects[0].tasks[0].ToggleComplete()
 console.log(Projects.projects[0].tasks[0].PrintTask())
 
 
-Projects.listProjects();
+
 
 Projects.deleteProject[1];
 
@@ -103,3 +133,6 @@ Projects.listProjects();
 
 //console.log(Projects.projects[0].tasks[0].title.getItem())
 //console.log(Projects.projects[0].tasks[1].title.getItem())
+
+*/
+
