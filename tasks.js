@@ -1,4 +1,12 @@
+import { DOMUpdate } from "./DOMController.js";
+
 // Task objects
+function ToggleComplete(task, project) {
+    task.task_data[3] = !task.task_data[3];
+    DOMUpdate.updateTaskTable(project)
+
+}
+
 function Task(task_info) {
     /*
     let title = TaskObject(task_info[0]);
@@ -14,10 +22,12 @@ function Task(task_info) {
 
     let task_data = [title, description, priority, completed];
 
-
+    /*
     const ToggleComplete = () => { 
         completed = !completed;
     }
+    
+    */
 
     const PrintTask = () => {
         return `${title.getItem()}, ${description.getItem()}, ${priority.getItem()}, ${completed}`;
@@ -45,4 +55,4 @@ function TaskObject(item_) {
     return {item, getItem, updateItem, capataliseItem}
 }
 
-export {Task, TaskObject}
+export {Task, TaskObject, ToggleComplete}

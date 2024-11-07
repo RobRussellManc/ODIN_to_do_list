@@ -22,6 +22,7 @@ export const DOMUpdate = (function() {
         ProjectListDOM.appendChild(ulNode);
     }
 
+    /*
     const displayTasks = (project) => {
         TasksDOM.innerHTML = '';
         console.log(project.tasks)
@@ -35,6 +36,7 @@ export const DOMUpdate = (function() {
 
         TasksDOM.appendChild(ulNode);
     }
+        */
 
     const updateTaskTable = (project) => {
         let table= TaskTable(project)
@@ -44,7 +46,7 @@ export const DOMUpdate = (function() {
 
     }
 
-    return {listProjects, displayTasks, updateTaskTable}
+    return {listProjects, updateTaskTable}
 
 })();
 

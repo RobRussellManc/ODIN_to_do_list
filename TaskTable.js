@@ -1,8 +1,10 @@
+import { ToggleComplete } from "./tasks.js";
+
 function TableRow() {
     return document.createElement('tr');
 }
 
-function TableCell(type, content) {
+function TableCell(type, content, ) {
     let tc = document.createElement(type);
     tc.textContent =content ;
     return tc;
@@ -25,16 +27,24 @@ export function TaskTable(project) {
 
 
     // Tasks
-    console.log(project.tasks);
-
     
     project.tasks.forEach(task => {
-        console.log(task)
+        //console.log(task)
         var tr = TableRow();
+        let count = 0;
         task.task_data.forEach(taskItem => {
-            console.log(taskItem)
-            let tc = TableCell('td', taskItem);
-            tr.appendChild(tc);
+            
+            //console.log(task)
+            
+            if (count == 3) {
+                var td = document.createElement('td');
+                td.textContent = taskItem;
+                td.addEventListener("click", () => ToggleComplete(task, project))
+            } else {
+                var td = TableCell('td', taskItem);
+            }
+            tr.appendChild(td);
+            count = count + 1;
         })
         DOMTable.appendChild(tr);
     })
