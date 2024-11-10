@@ -1,12 +1,45 @@
 import { DOMUpdate } from "./DOMController.js";
 
-// Task objects
+
+class Task {
+    #task
+
+    constructor(data) {
+        this.#task = taskify(data);
+    }
+
+    get task() {
+        return this.#task;
+    }
+
+    toggleComplete() {
+        this.#task.completed = !this.#task.completed;
+    }
+    
+}
+
+function taskify(data) {
+    let title = data[0];
+    let description = data[1];
+    let priority = data[2];
+    let completed = false;
+    return {title, description, priority, completed}
+};
+
+
+
+// Toggle task complete
 function ToggleComplete(task, project) {
     task.task_data[3] = !task.task_data[3];
     DOMUpdate.updateTaskTable(project)
 
 }
 
+let x = new Task(["Finish project", "Complete all pending items", "High"]);
+console.log(x);
+
+
+// Task objects
 function Task(task_info) {
     /*
     let title = TaskObject(task_info[0]);
@@ -27,13 +60,13 @@ function Task(task_info) {
         completed = !completed;
     }
     
-    */
+   
 
     const PrintTask = () => {
         return `${title.getItem()}, ${description.getItem()}, ${priority.getItem()}, ${completed}`;
     }
-     
-    return {task_data, PrintTask, ToggleComplete}
+      */
+    return {task_data}
 }
 
 // Individual task item objects
