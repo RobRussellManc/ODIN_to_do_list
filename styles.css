@@ -2,10 +2,24 @@ container {
     display: grid;
     grid-template-columns: 1.5fr 3fr;
     height: 400px;
+    width: 850px;
+}
+
+leftbar {
+    display: grid;
+    grid-template-rows: 1fr 70px;;
 }
 
 projects {
     background-color: aqua;
+}
+
+addProj {
+    background-color: darkgray;
+    display: grid;
+    grid-template-columns: 1fr 33px;
+
+
 }
 
 tasks {
@@ -15,3 +29,27 @@ tasks {
 table, th, td {
     border: 1px solid;
   }
+
+.add_button {
+    height: 30px;
+    margin-top: 15px;
+    grid-column: 2/3;
+
+}
+
+
+.newProject > label {
+    display: block;
+    grid-column: 1/2;
+
+    
+}
+
+
+
+.newProject > input {
+    border-radius: 15px;
+    height: 25px;
+    grid-column: 1/2;
+
+}

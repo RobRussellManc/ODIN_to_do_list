@@ -2,6 +2,8 @@ import {User} from "./user.js"
 import {Printer} from "./printer.js"
 
 import { DOMUpdate } from "./DOMController.js"
+import { DomListeners } from "./ButtonListeners.js";
+
 
 
 let task1 = {
@@ -44,3 +46,7 @@ printer.printProjects(user1)
 
 
 DOMUpdate.listProjects(user1)
+
+
+const x = new DomListeners()
+x.AddProjectButton(user1)

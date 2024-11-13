@@ -6,7 +6,12 @@ export const DOMUpdate = (function() {
     const ProjectListDOM = document.querySelector('projects');
     const TasksDOM = document.querySelector('tasks');
 
+    
+
     const listProjects = (user) => {
+        // Reset contents
+        ProjectListDOM.innerHTML = '';
+
         let ulNode = document.createElement('ul');
 
         for (let key in user.projects) {
@@ -24,6 +29,9 @@ export const DOMUpdate = (function() {
         TasksDOM.innerHTML = '';
         TasksDOM.appendChild(table);
     }
+
+   
+
 
     return {listProjects, updateTaskTable}
 
