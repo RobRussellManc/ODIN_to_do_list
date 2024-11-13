@@ -1,5 +1,9 @@
 import { TaskTable } from "./TaskTable.js"
 
+import { DomListeners } from "./ButtonListeners.js";
+
+
+
 export const DOMUpdate = (function() {
 
     // DOM Selectors
@@ -18,7 +22,10 @@ export const DOMUpdate = (function() {
             let project = user.projects[key];
             let liNode = document.createElement('li');
             liNode.textContent = project.title
-            liNode.addEventListener("click", () => updateTaskTable(project))
+            liNode.addEventListener("click", () => {
+                updateTaskTable(project);
+                activateNewTaskButton(project);
+            })
             ulNode.appendChild(liNode); 
         };
         ProjectListDOM.appendChild(ulNode);
@@ -28,12 +35,27 @@ export const DOMUpdate = (function() {
         let table= TaskTable(project)
         TasksDOM.innerHTML = '';
         TasksDOM.appendChild(table);
+        displayProjectName(project.title);
+    }
+
+    const activateNewTaskButton = (project) => {
+        DomListeners.AddTaskButton(project);
+    }
+
+    const displayusername = (username) => {
+        const display_username = document.querySelector('.display_username');
+        display_username.innerHTML = username;
+    }
+    
+    const displayProjectName = (projectname) => {
+        const projectdisplayname = document.querySelector('.display_project');
+        projectdisplayname.innerHTML = projectname;
     }
 
    
 
 
-    return {listProjects, updateTaskTable}
+    return {listProjects, updateTaskTable, displayusername}
 
 })();
 

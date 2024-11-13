@@ -20,19 +20,50 @@
             
                     
                     
-                    <input form="myForm" type="submit" id="submit" value="submit" >
+                    <input form="newProject" type="submit" id="project_submit" value="submit" >
                     
-                    
-
                 </form>
                 <!-- <img src="images/plus.svg" class="add_button"> -->
 
             </addProj>
         </leftbar> 
         
-        <tasks>
+        <rightbar>
+            <top_bar>
+                <display_project>
+                    <span class="display_project"></span>
 
-        </tasks>
+                </display_project>
+                <display_username>
+                    <span class="greeting">
+                    Welcome, <span class="display_username"></span>
+                    </span>
+                </display_username>
+            </top_bar>
+            <completed_toggle_button>
+
+            </completed_toggle_button>
+            <tasks>
+
+            </tasks>
+            <add_project>
+                <form class="addTask">
+                    <label for="taskTitle">Task title</label>
+                    <input type="text" id="taskTitle" name="taskTitle" />
+
+                    <label for="taskDesc">Task description</label>
+                    <input type="text" id="taskDesc" name="taskDesc" />
+
+                    <label for="taskPriority">Priority</label>
+                    <input type="text" id="taskPriority" name="taskPriority" />
+                
+
+                    <input form="addTask" type="submit" id="task_submit" value="submit" >
+                    
+                </form>
+
+            </add_project>
+        </rightbar>
     </container>
 
 </body>

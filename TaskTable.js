@@ -37,12 +37,12 @@ export function TaskTable(project) {
         let count = 0;
         for (let data_item_key in task_data) {
             let task_data_item = task.task[data_item_key];
-            console.log(task_data_item)
+            //console.log(task_data_item)
             
             if (data_item_key == 'completed') {
                 var td = document.createElement('td');
                 td.textContent = task_data_item;
-                console.log(task);
+                //console.log(task);
                 td.addEventListener("click", () => {
                     task.toggleComplete()
                     DOMUpdate.updateTaskTable(project);

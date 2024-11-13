@@ -28,7 +28,11 @@ user1.createProject('Robs Project');
 user1.createProject('Elens Project');
 user1.createProject('Bluebells Project');
 
+
+console.log(user1.projects[0].createTask(task2))
+
 // Create tasks
+/*
 user1.createTask(task1, 0)
 user1.createTask(task2, 0)
 user1.createTask(task2, 1)
@@ -43,10 +47,12 @@ user1.projects[0].projectTasks[0].toggleComplete()
 printer.printTasks(user1, 0)
 
 printer.printProjects(user1)
-
+*/
 
 DOMUpdate.listProjects(user1)
 
+DOMUpdate.displayusername(user1.name)
 
-const x = new DomListeners()
-x.AddProjectButton(user1)
+
+
+DomListeners.AddProjectButton(user1)

@@ -10,6 +10,63 @@ leftbar {
     grid-template-rows: 1fr 70px;;
 }
 
+rightbar {
+    display: grid;
+    grid-template-rows: 30px 30px 1fr 70px;
+}
+
+top_bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+display_project {
+    background-color: grey;
+    text-align: center;
+}
+
+.display_project {
+    font-weight: bold;
+    font-size: 1.6rem;
+
+
+}
+
+display_username {
+    background-color: rgb(114, 94, 94);
+    display: flex;
+    justify-content: right;
+}
+
+.display_username {
+
+}
+
+display_username > span {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-right: 15px;
+
+
+}
+
+
+
+completed_toggle_button {
+    background-color: rgb(71, 141, 141);
+}
+
+tasks {
+    background-color: bisque;
+}
+
+add_project {
+    background-color: rgb(131, 131, 131);
+}
+
+
 projects {
     background-color: aqua;
 }
@@ -17,14 +74,11 @@ projects {
 addProj {
     background-color: darkgray;
     display: grid;
-    grid-template-columns: 1fr 33px;
+
 
 
 }
 
-tasks {
-    background-color: bisque;
-}
 
 table, th, td {
     border: 1px solid;
