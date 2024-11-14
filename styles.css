@@ -3,6 +3,7 @@ container {
     grid-template-columns: 1.5fr 3fr;
     height: 400px;
     width: 850px;
+ 
 }
 
 leftbar {
@@ -18,22 +19,27 @@ rightbar {
 top_bar {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    max-height: 30px;
+    
 }
 
 display_project {
-    background-color: grey;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    border-right-width: 0;
     text-align: center;
 }
 
 .display_project {
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 
 
 }
 
 display_username {
-    background-color: rgb(114, 94, 94);
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
     display: flex;
     justify-content: right;
 }
@@ -91,31 +97,89 @@ display_username > span {
 }
 
 completed_toggle_button {
-    background-color: rgb(71, 141, 141);
+    border: 2px solid black;
+    background-color: rgb(156, 175, 192);
+    border-bottom-width: 0;
+    border-top-width: 0;
+
 }
 
 tasks {
-    background-color: bisque;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+}
+
+tasks > p {
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 add_task, add_proj {
-    background-color: #d2fffb;
+    background-color: #bbeeea;
     border: 2px solid black;
+    
+    border-top-width: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-projects {
-    background-color: aqua;
+add_proj {
+    border-right-width: 0;
 }
 
 
+projects {
+    background-color: rgb(199, 199, 199);
+    border: 2px solid black;
+    border-right-width: 0;
+}
+
+list_projects ul > li:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+h1.your_projects {
+    text-align: center;
+    text-decoration: underline;
+}
 
 table, th, td {
-    border: 1px solid;
+    border: 0px solid;
+    border-collapse: collapse;
+    word-wrap:break-word;
+
   }
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+table > tr {
+    text-align: center;
+}
+
+tr >.Title {
+    width: 30%;
+}
+
+tr > .Description {
+    width: 30%;
+}
+
+tr > .Priority {
+    width: 20%;
+}
+
+tr > .Completed {
+    width: 20%;
+}
 
 .add_button {
     height: 30px;

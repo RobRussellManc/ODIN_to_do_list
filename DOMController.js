@@ -7,7 +7,7 @@ import { DomListeners } from "./ButtonListeners.js";
 export const DOMUpdate = (function() {
 
     // DOM Selectors
-    const ProjectListDOM = document.querySelector('projects');
+    const ProjectListDOM = document.querySelector('list_projects');
     const TasksDOM = document.querySelector('tasks');
 
     

@@ -22,7 +22,8 @@ export function TaskTable(project) {
     var tr = TableRow();
 
     headers.forEach(element => {
-        let headercell = TableCell('th', element)
+        let headercell = TableCell('th', element);
+        headercell.classList.add(element);
         tr.appendChild(headercell);
     });
     DOMTable.appendChild(tr);
