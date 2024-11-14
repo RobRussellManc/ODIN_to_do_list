@@ -52,7 +52,43 @@ display_username > span {
 
 }
 
+.addTask, .newProject {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
 
+.newProject input {
+    width: 180px;
+    display: block;
+}
+
+
+
+.addTask input {
+    width: 150px;
+    display: block;
+}
+
+#task_submit, #project_submit {
+    margin-top: 8px;
+    width: 35px;
+    height: 35px;
+    border: 0px;
+}
+
+#task_submit:hover, #project_submit:hover {
+
+    filter: invert(42%) sepia(41%) saturate(2116%) hue-rotate(162deg) brightness(100%) contrast(104%);
+    cursor: pointer;
+}
+
+
+
+
+#add_button_icon {
+    width: 30px;
+}
 
 completed_toggle_button {
     background-color: rgb(71, 141, 141);
@@ -62,8 +98,12 @@ tasks {
     background-color: bisque;
 }
 
-add_project {
-    background-color: rgb(131, 131, 131);
+add_task, add_proj {
+    background-color: #d2fffb;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -71,13 +111,6 @@ projects {
     background-color: aqua;
 }
 
-addProj {
-    background-color: darkgray;
-    display: grid;
-
-
-
-}
 
 
 table, th, td {
@@ -101,9 +134,3 @@ table, th, td {
 
 
 
-.newProject > input {
-    border-radius: 15px;
-    height: 25px;
-    grid-column: 1/2;
-
-}

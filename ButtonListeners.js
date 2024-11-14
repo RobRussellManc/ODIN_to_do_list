@@ -17,13 +17,27 @@ export const DomListeners = (function() {
     const AddProjectButton = (user) => {
         const addProjectButton = document.querySelector('#project_submit');
         const form = document.querySelector('.newProject');
-
-        addProjectButton.addEventListener("click", () => {
+        
+        // Logic for when new project form is submitted
+        const addProjectHandler = () => {
             const projectname = form.elements['newProject'].value;
             //console.log(projectname);
             user.createProject(projectname);
             DOMUpdate.listProjects(user);
             form.reset();
+        }
+
+        // Handle when enter key is pressed
+        form.addEventListener("keydown", function(event) {
+            // Check if the pressed key is "Enter"
+            if (event.key === "Enter") {
+                event.preventDefault(); 
+                addProjectHandler();    
+        }});
+
+        // Handle when submit button is pressed
+        addProjectButton.addEventListener("click", () => {
+            addProjectHandler();
         })
     }
 

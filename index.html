@@ -13,19 +13,21 @@
             <projects>
 
             </projects>
-            <addProj>
+            <add_proj>
                 <form class="newProject">
+                    <div>
                     <label for="newProject">Add project:</label>
                     <input type="text" id="newProject" name="newProject" />
-            
+                    </div>
                     
+                   
+                    <button type="button" style="background: url(images/plus.svg); background-size: cover" id="project_submit"></button>
                     
-                    <input form="newProject" type="submit" id="project_submit" value="submit" >
                     
                 </form>
                 <!-- <img src="images/plus.svg" class="add_button"> -->
 
-            </addProj>
+            </add_proj>
         </leftbar> 
         
         <rightbar>
@@ -46,23 +48,30 @@
             <tasks>
 
             </tasks>
-            <add_project>
+            <add_task>
                 <form class="addTask">
-                    <label for="taskTitle">Task title</label>
-                    <input type="text" id="taskTitle" name="taskTitle" />
+                    <div>
+                        <label for="taskTitle">Task title</label>
+                        <input type="text" id="taskTitle" name="taskTitle" />
+                    </div>
+                    <div>
+                        <label for="taskDesc">Task description</label>
+                        <input type="text" id="taskDesc" name="taskDesc" />
+                    </div>
+                    <div>
+                        <label for="taskPriority">Priority</label>
+                        <input type="text" id="taskPriority" name="taskPriority" />
+                    </div>
 
-                    <label for="taskDesc">Task description</label>
-                    <input type="text" id="taskDesc" name="taskDesc" />
-
-                    <label for="taskPriority">Priority</label>
-                    <input type="text" id="taskPriority" name="taskPriority" />
-                
-
-                    <input form="addTask" type="submit" id="task_submit" value="submit" >
-                    
+                    <button type="button" style="background: url(images/plus.svg); background-size: cover" id="task_submit"></button>
+                    <!--
+                    <button id="task_submit" type="button">
+                        <img src="images/plus.svg" id="add_button_icon">
+                    </button>
+                    -->
                 </form>
 
-            </add_project>
+            </add_task>
         </rightbar>
     </container>
 
