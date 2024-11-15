@@ -12,13 +12,15 @@ let task1 = {
     priority: "High",
     completed: false
 };
-
+/*
 const task2 = {
     title: "Complete design tasks",
     description: "Work on the UI design", 
     priority: "Medium",
     completed: true
 };
+
+*/
 
 // Create user
 const user1 = new User('Rob');
@@ -29,7 +31,18 @@ user1.createProject('Elens Project');
 user1.createProject('Bluebells Project');
 
 
-console.log(user1.projects[0].createTask(task2))
+//console.log(user1.projects[0].createTask(task1))
+
+for (let i = 0; i < 30; i++) {
+    const task2 = {
+        title: `${i}`,
+        description: "Work on the UI design", 
+        priority: "Medium",
+        completed: true
+    };
+
+    user1.projects[0].createTask(task2);
+}
 
 // Create tasks
 /*

@@ -1,17 +1,19 @@
 import { DOMUpdate } from "./DOMController.js";
 
-function TableRow() {
-    return document.createElement('tr');
+function TableRow(tr_class = '') {
+    const x = document.createElement('tr')
+    x.classList.add(tr_class)
+    return x;
 }
 
-function TableCell(type, content, ) {
+function TableCell(type, content) {
     let tc = document.createElement(type);
     tc.textContent =content ;
     return tc;
 
 }
 
-export function TaskTable(project) {
+export function GenerateTaskTable(project) {
 
     const headers = ['Title', 'Description', 'Priortiy', 'Completed?']
     //const headers = Object.keys(project.projectTasks[0].task);
@@ -19,7 +21,7 @@ export function TaskTable(project) {
     const DOMTable = document.createElement('table');
     
     // Header
-    var tr = TableRow();
+    var tr = TableRow('thead');
 
     headers.forEach(element => {
         let headercell = TableCell('th', element);
@@ -34,7 +36,7 @@ export function TaskTable(project) {
         let task = project.projectTasks[task_key];
         let task_data = project.projectTasks[task_key].task;
         //console.log(task_data)
-        var tr = TableRow();
+        var tr = TableRow('tbody');
         let count = 0;
         for (let data_item_key in task_data) {
             let task_data_item = task.task[data_item_key];

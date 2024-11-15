@@ -107,9 +107,11 @@ completed_toggle_button {
 tasks {
     background-color: rgb(255, 255, 255);
     border: 2px solid black;
+    display: grid;
+    grid-template-rows: 1fr 30px;
 }
 
-tasks > p {
+p.welcome-text {
     text-align: center;
     width: 60%;
     margin-left: auto;
@@ -119,7 +121,6 @@ tasks > p {
 add_task, add_proj {
     background-color: #bbeeea;
     border: 2px solid black;
-    
     border-top-width: 0;
     display: flex;
     justify-content: center;
@@ -194,6 +195,21 @@ tr > .Completed {
     grid-column: 1/2;
 
     
+}
+
+
+page_buttons {
+    margin: auto;
+}
+
+#prev-page {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    display: inline;
+}
+#next-page {
+    grid-row: 2/3;
+    grid-column: 1/2;
 }
 
 
