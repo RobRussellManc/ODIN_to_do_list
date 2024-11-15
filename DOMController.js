@@ -1,5 +1,5 @@
 import { GenerateTaskTable } from "./TaskTable.js"
-import { TableNavigation } from "./tables_pages.js";
+import { TableNavigation } from "./TableNavigation.js";
 import { DomListeners } from "./ButtonListeners.js";
 
 
